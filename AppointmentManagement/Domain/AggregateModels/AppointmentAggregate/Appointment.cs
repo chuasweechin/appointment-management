@@ -11,12 +11,12 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 
 		public Status Status { get; private set; }
 
-		public DateTimeOffset Start { get; private set; }
-		public DateTimeOffset End { get; private set; }
+		public DateTime Start { get; private set; }
+		public DateTime End { get; private set; }
 
 		protected Appointment() { }
 
-		public Appointment(string doctorId, string patientId, DateTimeOffset start, string id = "") : base(id)
+		public Appointment(string doctorId, string patientId, DateTime start, string id = "") : base(id)
 		{
 			DoctorId = doctorId;
 			PatientId = patientId;
@@ -32,7 +32,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 		public void Cancel()
 		{
 			Status = Status.Cancelled;
-			UpdatedAt = DateTimeOffset.UtcNow;
+			UpdatedAt = DateTime.Now;
 		}
 
 		private void IsWithinConsultationWindow()
@@ -40,7 +40,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 			const uint CONSULTATION_START_TIME = 8;
 			const uint CONSULTATION_END_TIME = 16;
 
-			if (Start.LocalDateTime.Hour < CONSULTATION_START_TIME || Start.LocalDateTime.Hour > CONSULTATION_END_TIME)
+			if (Start.Hour < CONSULTATION_START_TIME || Start.Hour > CONSULTATION_END_TIME)
 				throw new AppointmentDomainException(
 					$"Appointment made is not within the consultation window of " +
 					$"{ CONSULTATION_START_TIME }:00am to { CONSULTATION_END_TIME }:00pm. " +

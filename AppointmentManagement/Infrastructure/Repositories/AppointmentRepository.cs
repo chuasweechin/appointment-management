@@ -1,6 +1,9 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppointmentManagement.Infrastructure.Repositories
 {
@@ -13,9 +16,14 @@ namespace AppointmentManagement.Infrastructure.Repositories
 			_context = context;
 		}
 
-		public Task Get(string doctorId, DateTimeOffset date)
+		public async Task<List<Appointment>> Get(string doctorId, string patientId, DateTime dateTime)
 		{
-			throw new NotImplementedException();
+			return await _context.Appointments
+				.Where(o =>
+					(string.IsNullOrEmpty(patientId) || o.PatientId == patientId) &&
+					(string.IsNullOrEmpty(doctorId) || o.DoctorId == doctorId) &&
+					o.Start.Date == dateTime.Date)
+				.ToListAsync();
 		}
 
 		public async Task Add(Appointment appointment)
@@ -27,6 +35,11 @@ namespace AppointmentManagement.Infrastructure.Repositories
 		public async Task<Appointment> FindById(string id)
 		{
 			return await _context.Appointments.FindAsync(id);
+		}
+
+		public async Task SaveChangesToDatabase()
+		{
+			await _context.SaveChangesAsync();
 		}
   }
 }

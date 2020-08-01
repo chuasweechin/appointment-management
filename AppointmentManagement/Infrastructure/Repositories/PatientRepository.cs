@@ -22,5 +22,10 @@ namespace AppointmentManagement.Infrastructure.Repositories
 		{
 			return await _context.Patients.FindAsync(id);
 		}
+
+		public async Task SaveChangesToDatabase()
+		{
+			await _context.SaveChangesAsync();
+		}
 	}
 }
