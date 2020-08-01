@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Domain\AggregateModels\" />
+    <Folder Include="Domain\SeedWork\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\AggregateModels\AppointmentAggregate\" />
+    <Folder Include="Domain\AggregateModels\DoctorAggregate\" />
+    <Folder Include="Domain\AggregateModels\PatientAggregate\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\EntityConfigurations\" />
+    <Folder Include="Infrastructure\Repositories\" />
+    <Folder Include="Domain\Exceptions\" />
+    <Folder Include="Application\" />
+    <Folder Include="Application\Models\" />
+    <Folder Include="Application\Models\ViewModels\" />
+    <Folder Include="Application\Models\Dto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+  </ItemGroup>
+</Project>
