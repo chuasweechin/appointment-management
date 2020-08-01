@@ -18,8 +18,8 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 
 		public Appointment(string doctorId, string patientId, DateTime start, string id = "") : base(id)
 		{
-			DoctorId = doctorId;
-			PatientId = patientId;
+			DoctorId = string.IsNullOrEmpty(doctorId) ? throw new ArgumentException() : doctorId;
+			PatientId = string.IsNullOrEmpty(patientId) ? throw new ArgumentException() : patientId;
 
 			Status = Status.Active;
 

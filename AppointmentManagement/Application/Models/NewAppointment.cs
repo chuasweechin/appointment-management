@@ -1,6 +1,6 @@
 using System;
 
-namespace AppointmentManagement.Application.Models.Dto
+namespace AppointmentManagement.Application.Models
 {
   public class NewAppointment
   {

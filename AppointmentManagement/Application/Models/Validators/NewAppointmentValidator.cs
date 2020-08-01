@@ -3,7 +3,7 @@ using AppointmentManagement.Domain.AggregateModels.DoctorAggregate;
 using AppointmentManagement.Domain.AggregateModels.PatientAggregate;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
 
-namespace AppointmentManagement.Application.Models.Dto.Validators
+namespace AppointmentManagement.Application.Models.Validators
 {
 	public class NewAppointmentValidator : AbstractValidator<NewAppointment>
 	{

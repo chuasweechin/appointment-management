@@ -1,4 +1,4 @@
-using AppointmentManagement.Application.Models.Dto.Validators;
+using AppointmentManagement.Application.Models.Validators;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
 using AppointmentManagement.Domain.AggregateModels.DoctorAggregate;
 using AppointmentManagement.Domain.AggregateModels.PatientAggregate;

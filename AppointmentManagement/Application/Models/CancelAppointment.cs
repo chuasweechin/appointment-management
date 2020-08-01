@@ -1,4 +1,4 @@
-namespace AppointmentManagement.Application.Models.Dto
+namespace AppointmentManagement.Application.Models
 {
   public class CancelAppointment
   {

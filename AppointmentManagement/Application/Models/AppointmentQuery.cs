@@ -1,6 +1,6 @@
 using System;
 
-namespace AppointmentManagement.Application.Models.ViewModels
+namespace AppointmentManagement.Application.Models
 {
   public class AppointmentQuery
   {

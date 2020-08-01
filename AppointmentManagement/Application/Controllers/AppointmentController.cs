@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AppointmentManagement.Application.Models.Dto;
-using AppointmentManagement.Application.Models.ViewModels;
+using AppointmentManagement.Application.Models;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
 
 namespace AppointmentManagement.Application.Controllers
@@ -19,7 +18,7 @@ namespace AppointmentManagement.Application.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> Get([FromQuery] AppointmentQuery query)
+		public async Task<IActionResult> GetAppointments([FromQuery] AppointmentQuery query)
 		{
 			try
 			{
@@ -33,7 +32,7 @@ namespace AppointmentManagement.Application.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Create([FromBody] NewAppointment request)
+		public async Task<IActionResult> CreateAppointment([FromBody] NewAppointment request)
 		{
 			try
 			{
@@ -42,12 +41,12 @@ namespace AppointmentManagement.Application.Controllers
 			}
 			catch (Exception)
 			{
-				return StatusCode(500);
+				return BadRequest(500);
 			}
 		}
 
 		[HttpPut]
-		public async Task<IActionResult> Update([FromBody] CancelAppointment request)
+		public async Task<IActionResult> CancelAppointment([FromBody] CancelAppointment request)
 		{
 			try
 			{
@@ -59,7 +58,7 @@ namespace AppointmentManagement.Application.Controllers
 			}
 			catch (Exception)
 			{
-				return StatusCode(500);
+				return BadRequest(500);
 			}
 		}
 	}

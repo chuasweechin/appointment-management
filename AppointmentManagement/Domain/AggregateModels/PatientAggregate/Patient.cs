@@ -1,3 +1,4 @@
+using System;
 using AppointmentManagement.Domain.Models.SeedWork;
 
 namespace AppointmentManagement.Domain.AggregateModels.PatientAggregate
@@ -12,7 +13,7 @@ namespace AppointmentManagement.Domain.AggregateModels.PatientAggregate
 
 		public Patient(string name, uint age, Gender gender, string id = "") : base(id)
 		{
-			Name = name;
+			Name = string.IsNullOrEmpty(name) ? throw new ArgumentException() : name;
 			Age = age;
 			Gender = gender;
 		}
