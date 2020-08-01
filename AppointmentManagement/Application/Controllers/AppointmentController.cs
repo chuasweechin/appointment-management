@@ -25,9 +25,9 @@ namespace AppointmentManagement.Application.Controllers
 				var appointments = await _appointmentRepo.Get(query.DoctorId, query.PatientId, query.DateTime);
 				return Ok(appointments);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				return StatusCode(500);
+				return StatusCode(500, ex.Message);
 			}
 		}
 
@@ -39,9 +39,9 @@ namespace AppointmentManagement.Application.Controllers
 				var appointment = await _appointmentRepo.Add(new Appointment(request.DoctorId, request.PatientId, request.DateTime));
 				return Ok(appointment);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				return BadRequest(500);
+				return StatusCode(500, ex.Message);
 			}
 		}
 
@@ -56,9 +56,9 @@ namespace AppointmentManagement.Application.Controllers
 
 				return Ok();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				return BadRequest(500);
+				return StatusCode(500, ex.Message);
 			}
 		}
 	}

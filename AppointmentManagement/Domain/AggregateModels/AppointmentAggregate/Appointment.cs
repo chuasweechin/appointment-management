@@ -42,7 +42,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 
 			if (DoctorId == doctorId)
 			{
-				if (dateTime >= Start && dateTime <= End)
+				if (dateTime.TimeOfDay == Start.TimeOfDay)
 					return false;
 			}
 
@@ -56,7 +56,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 
 			if (PatientId == patientId)
 			{
-				if (dateTime >= Start && dateTime <= End)
+				if (dateTime.TimeOfDay == Start.TimeOfDay)
 					return false;
 			}
 
@@ -71,7 +71,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 			if (Start.Hour < CONSULTATION_START_TIME || Start.Hour > CONSULTATION_END_TIME)
 				throw new AppointmentDomainException(
 					$"Appointment made is not within the consultation window of " +
-					$"{ CONSULTATION_START_TIME }:00am to { CONSULTATION_END_TIME }:00pm. " +
+					$"{ CONSULTATION_START_TIME }:00 to { CONSULTATION_END_TIME }:00 hours. " +
 					"The appointment cannot be made."
 				);
 		}

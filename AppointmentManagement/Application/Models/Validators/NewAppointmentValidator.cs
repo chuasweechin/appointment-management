@@ -17,6 +17,10 @@ namespace AppointmentManagement.Application.Models.Validators
 			_doctorRepo = doctorRepo;
 			_patientRepo = patientRepo;
 
+			RuleFor(o => o.DateTime)
+				.Must(dateTime => dateTime.Minute == 0 && dateTime.Second == 0 && dateTime.Millisecond == 0)
+				.WithMessage("Appointment time must be based on a hourly slot. Please try again.");
+
 			RuleFor(o => o.DoctorId)
 				.MustAsync(async (doctorId, cancellation) => await _doctorRepo.FindById(doctorId) != null)
 				.WithMessage("Doctor id is invalid. Not found in database. Please try again.");

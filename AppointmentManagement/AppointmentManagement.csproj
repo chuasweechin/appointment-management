@@ -19,7 +19,6 @@
     <Folder Include="Application\" />
     <Folder Include="Application\Models\" />
     <Folder Include="Infrastructure\DataSeed\" />
-    <Folder Include="Application\Models\Dto\Validators\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
