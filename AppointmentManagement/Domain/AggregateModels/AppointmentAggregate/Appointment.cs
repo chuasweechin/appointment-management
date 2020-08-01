@@ -35,6 +35,34 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 			UpdatedAt = DateTime.Now;
 		}
 
+		public bool NoExistingAppointmentForDoctor(string doctorId, DateTime dateTime)
+		{
+			if (Status == Status.Cancelled)
+				return true;
+
+			if (DoctorId == doctorId)
+			{
+				if (dateTime >= Start && dateTime <= End)
+					return false;
+			}
+
+			return true;
+		}
+
+		public bool NoExistingAppointmentForPatient(string patientId, DateTime dateTime)
+		{
+			if (Status == Status.Cancelled)
+				return true;
+
+			if (PatientId == patientId)
+			{
+				if (dateTime >= Start && dateTime <= End)
+					return false;
+			}
+
+			return true;
+		}
+
 		private void IsWithinConsultationWindow()
 		{
 			const uint CONSULTATION_START_TIME = 8;
@@ -51,6 +79,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 		private void SetDateTimeEnd()
 		{
 			const uint CONSULTATION_DURATION = 1;
+
 			End = Start.AddHours(CONSULTATION_DURATION);
 		}
 	}

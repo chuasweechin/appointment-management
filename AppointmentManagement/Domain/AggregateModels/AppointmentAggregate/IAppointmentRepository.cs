@@ -8,7 +8,7 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
   public interface IAppointmentRepository : IRepository
   {
     Task<List<Appointment>> Get(string doctorId, string patientId, DateTime date);
-    Task Add(Appointment appointment);
+    Task<Appointment> Add(Appointment appointment);
     Task<Appointment> FindById(string id);
   }
 }

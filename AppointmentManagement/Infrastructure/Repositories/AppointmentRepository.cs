@@ -26,10 +26,12 @@ namespace AppointmentManagement.Infrastructure.Repositories
 				.ToListAsync();
 		}
 
-		public async Task Add(Appointment appointment)
+		public async Task<Appointment> Add(Appointment appointment)
 		{
 			_context.Appointments.Add(appointment);
 			await _context.SaveChangesAsync();
+
+			return appointment;
 		}
 
 		public async Task<Appointment> FindById(string id)

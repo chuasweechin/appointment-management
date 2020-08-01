@@ -37,8 +37,8 @@ namespace AppointmentManagement.Application.Controllers
 		{
 			try
 			{
-				await _appointmentRepo.Add(new Appointment(request.DoctorId, request.PatientId, request.DateTime));
-				return Ok();
+				var appointment = await _appointmentRepo.Add(new Appointment(request.DoctorId, request.PatientId, request.DateTime));
+				return Ok(appointment);
 			}
 			catch (Exception)
 			{
