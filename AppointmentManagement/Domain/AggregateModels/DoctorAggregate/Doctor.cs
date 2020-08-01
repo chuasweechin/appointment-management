@@ -6,7 +6,9 @@ namespace AppointmentManagement.Domain.AggregateModels.DoctorAggregate
 	{
 		public string Name { get; private set; }
 
-		public Doctor(string name) : base()
+		protected Doctor() { }
+
+		public Doctor(string name, string id = "") : base(id)
 		{
 			Name = name;
 		}

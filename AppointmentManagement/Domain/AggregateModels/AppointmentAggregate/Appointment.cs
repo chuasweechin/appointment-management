@@ -14,7 +14,9 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 		public DateTimeOffset Start { get; private set; }
 		public DateTimeOffset End { get; private set; }
 
-		public Appointment(string doctorId, string patientId, DateTimeOffset start) : base()
+		protected Appointment() { }
+
+		public Appointment(string doctorId, string patientId, DateTimeOffset start, string id = "") : base(id)
 		{
 			DoctorId = doctorId;
 			PatientId = patientId;
@@ -25,6 +27,12 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 
 			SetDateTimeEnd();
 			IsWithinConsultationWindow();
+		}
+
+		public void Cancel()
+		{
+			Status = Status.Cancelled;
+			UpdatedAt = DateTimeOffset.UtcNow;
 		}
 
 		private void IsWithinConsultationWindow()
@@ -45,5 +53,5 @@ namespace AppointmentManagement.Domain.AggregateModels.AppointmentAggregate
 			const uint CONSULTATION_DURATION = 1;
 			End = Start.AddHours(CONSULTATION_DURATION);
 		}
-  }
+	}
 }

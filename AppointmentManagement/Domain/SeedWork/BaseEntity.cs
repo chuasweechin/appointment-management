@@ -4,16 +4,20 @@ namespace AppointmentManagement.Domain.Models.SeedWork
 {
   public class BaseEntity
   {
-		public string Id { get; set; }
+		public string Id { get; protected set; }
 
-		public DateTimeOffset CreatedAt { get; set; }
-		public DateTimeOffset UpdatedAt { get; set; }
+		public DateTimeOffset CreatedAt { get; protected set; }
+		public DateTimeOffset UpdatedAt { get; protected set; }
 
-		public BaseEntity()
+		protected BaseEntity() { }
+
+		public BaseEntity(string id)
 		{
-			Id = GenerateTypeId();
-			CreatedAt = DateTimeOffset.UtcNow;
-			UpdatedAt = DateTimeOffset.UtcNow;
+			DateTimeOffset utcNow = DateTimeOffset.UtcNow;
+
+			Id = string.IsNullOrEmpty(id) ? GenerateTypeId() : id;
+			CreatedAt = utcNow;
+			UpdatedAt = utcNow;
 		}
 
 		private string GenerateTypeId()

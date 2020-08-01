@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using AppointmentManagement.Infrastructure.DataSeed;
+using AppointmentManagement.Infrastructure.EntityConfigurations;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
 using AppointmentManagement.Domain.AggregateModels.DoctorAggregate;
 using AppointmentManagement.Domain.AggregateModels.PatientAggregate;
@@ -15,6 +17,14 @@ namespace AppointmentManagement.Infrastructure
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			modelBuilder.ApplyConfiguration(new AppointmentEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new DoctorEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new PatientEntityConfiguration());
+
+			modelBuilder.SeedAppointmentData();
+			modelBuilder.SeedDoctorData();
+			modelBuilder.SeedPatientData();
+
 			base.OnModelCreating(modelBuilder);
 		}
 	}

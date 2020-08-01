@@ -8,7 +8,9 @@ namespace AppointmentManagement.Domain.AggregateModels.PatientAggregate
 		public uint Age { get; private set; }
 		public Gender Gender { get; private set; }
 
-		public Patient(string name, uint age, Gender gender) : base()
+		protected Patient() { }
+
+		public Patient(string name, uint age, Gender gender, string id = "") : base(id)
 		{
 			Name = name;
 			Age = age;
