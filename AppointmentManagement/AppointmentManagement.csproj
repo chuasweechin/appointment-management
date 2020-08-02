@@ -19,6 +19,8 @@
     <Folder Include="Application\" />
     <Folder Include="Application\Models\" />
     <Folder Include="Infrastructure\DataSeed\" />
+    <Folder Include="Domain\DomainServices\" />
+    <Folder Include="Domain\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />

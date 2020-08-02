@@ -2,7 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AppointmentManagement.Application.Models;
+using AppointmentManagement.Domain.DomainServices;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
+using AppointmentManagement.Domain.Interface;
 
 namespace AppointmentManagement.Application.Controllers
 {
@@ -11,18 +13,20 @@ namespace AppointmentManagement.Application.Controllers
 	public class AppointmentController : ControllerBase
 	{
 		private readonly IAppointmentRepository _appointmentRepo;
+		private readonly IAppointmentDomainService _appointmentDomainService;
 
-		public AppointmentController(IAppointmentRepository appointmentRepo)
+		public AppointmentController(IAppointmentRepository appointmentRepo, IAppointmentDomainService appointmentDomainService)
 		{
 			_appointmentRepo = appointmentRepo;
+			_appointmentDomainService = appointmentDomainService;
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> GetAppointments([FromQuery] AppointmentQuery query)
+		public async Task<IActionResult> GetAppointment([FromQuery] AppointmentQuery query)
 		{
 			try
 			{
-				var appointments = await _appointmentRepo.Get(query.DoctorId, query.PatientId, query.DateTime);
+				var appointments = await _appointmentDomainService.GetAppointment(query.DoctorId, query.PatientId, query.DateTime);
 				return Ok(appointments);
 			}
 			catch (Exception ex)
@@ -36,7 +40,7 @@ namespace AppointmentManagement.Application.Controllers
 		{
 			try
 			{
-				var appointment = await _appointmentRepo.Add(new Appointment(request.DoctorId, request.PatientId, request.DateTime));
+				var appointment = await _appointmentDomainService.CreateNewAppointment(request.DoctorId, request.PatientId, request.DateTime);
 				return Ok(appointment);
 			}
 			catch (Exception ex)
@@ -50,10 +54,7 @@ namespace AppointmentManagement.Application.Controllers
 		{
 			try
 			{
-				var appointment = await _appointmentRepo.FindById(request.AppointmentId);
-				appointment.Cancel();
-				await _appointmentRepo.SaveChangesToDatabase();
-
+				await _appointmentDomainService.CancelExistingAppointment(request.AppointmentId);
 				return Ok();
 			}
 			catch (Exception ex)
