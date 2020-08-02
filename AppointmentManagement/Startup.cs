@@ -2,6 +2,8 @@ using AppointmentManagement.Application.Models.Validators;
 using AppointmentManagement.Domain.AggregateModels.AppointmentAggregate;
 using AppointmentManagement.Domain.AggregateModels.DoctorAggregate;
 using AppointmentManagement.Domain.AggregateModels.PatientAggregate;
+using AppointmentManagement.Domain.DomainServices;
+using AppointmentManagement.Domain.Interface;
 using AppointmentManagement.Infrastructure;
 using AppointmentManagement.Infrastructure.Repositories;
 using FluentValidation.AspNetCore;
@@ -42,6 +44,8 @@ namespace AppointmentManagement
 			services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 			services.AddScoped<IDoctorRepository, DoctorRepository>();
 			services.AddScoped<IPatientRepository, PatientRepository>();
+
+			services.AddScoped<IAppointmentDomainService, AppointmentDomainService>();
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

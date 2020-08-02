@@ -9,6 +9,6 @@ namespace AppointmentManagement.Domain.Interface
   {
     Task<List<Appointment>> GetAppointment(string doctorId, string patientId, DateTime dateTime);
     Task<Appointment> CreateNewAppointment(string doctorId, string patientId, DateTime dateTime);
-    Task CancelExistingAppointment(string appointmentId);
+    Task<Appointment> CancelExistingAppointment(string appointmentId);
   }
 }

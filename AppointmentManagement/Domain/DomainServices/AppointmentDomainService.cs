@@ -41,12 +41,14 @@ namespace AppointmentManagement.Domain.DomainServices
 			return appointment;
 		}
 
-		public async Task CancelExistingAppointment(string appointmentId)
+		public async Task<Appointment> CancelExistingAppointment(string appointmentId)
 		{
 			var appointment = await _appointmentRepo.FindById(appointmentId);
 			appointment.Cancel();
 
 			await _appointmentRepo.SaveChangesToDatabase();
+
+			return appointment;
 		}
 
 		private async Task IsValidDoctor(string doctorId)

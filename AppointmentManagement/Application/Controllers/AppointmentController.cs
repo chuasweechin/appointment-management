@@ -54,8 +54,8 @@ namespace AppointmentManagement.Application.Controllers
 		{
 			try
 			{
-				await _appointmentDomainService.CancelExistingAppointment(request.AppointmentId);
-				return Ok();
+				var appointment = await _appointmentDomainService.CancelExistingAppointment(request.AppointmentId);
+				return Ok(appointment);
 			}
 			catch (Exception ex)
 			{
