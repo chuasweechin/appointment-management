@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AppointmentManagement.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200801181627_create")]
+    [Migration("20200802145121_create")]
     partial class create
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,90 +66,90 @@ namespace AppointmentManagement.Migrations
                         new
                         {
                             Id = "A1",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 272, DateTimeKind.Local).AddTicks(9260),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 738, DateTimeKind.Local).AddTicks(1210),
                             DoctorId = "D1",
-                            End = new DateTime(2018, 3, 8, 10, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 3, 8, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P1",
-                            Start = new DateTime(2018, 3, 8, 9, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 3, 8, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 272, DateTimeKind.Local).AddTicks(9260)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 738, DateTimeKind.Local).AddTicks(1210)
                         },
                         new
                         {
                             Id = "A2",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9810),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(480),
                             DoctorId = "D1",
-                            End = new DateTime(2018, 4, 8, 11, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 4, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P1",
-                            Start = new DateTime(2018, 4, 8, 10, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 4, 8, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9810)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(480)
                         },
                         new
                         {
                             Id = "A3",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9960),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(640),
                             DoctorId = "D1",
-                            End = new DateTime(2018, 3, 8, 11, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 3, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P2",
-                            Start = new DateTime(2018, 3, 8, 10, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 3, 8, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9960)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(640)
                         },
                         new
                         {
                             Id = "A4",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9980),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(660),
                             DoctorId = "D1",
-                            End = new DateTime(2018, 4, 8, 12, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 4, 8, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P1",
-                            Start = new DateTime(2018, 4, 8, 11, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 4, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9980)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(660)
                         },
                         new
                         {
                             Id = "A5",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9990),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(670),
                             DoctorId = "D2",
-                            End = new DateTime(2018, 3, 18, 9, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 3, 18, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P1",
-                            Start = new DateTime(2018, 3, 18, 8, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 3, 18, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 273, DateTimeKind.Local).AddTicks(9990)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(670)
                         },
                         new
                         {
                             Id = "A6",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 274, DateTimeKind.Local).AddTicks(10),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(680),
                             DoctorId = "D2",
-                            End = new DateTime(2018, 4, 18, 10, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 4, 18, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P1",
-                            Start = new DateTime(2018, 4, 18, 9, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 4, 18, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 274, DateTimeKind.Local).AddTicks(10)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(680)
                         },
                         new
                         {
                             Id = "A7",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 274, DateTimeKind.Local).AddTicks(20),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(690),
                             DoctorId = "D2",
-                            End = new DateTime(2018, 3, 18, 10, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 3, 18, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P3",
-                            Start = new DateTime(2018, 3, 18, 9, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 3, 18, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 274, DateTimeKind.Local).AddTicks(20)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(690)
                         },
                         new
                         {
                             Id = "A8",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 274, DateTimeKind.Local).AddTicks(30),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(700),
                             DoctorId = "D2",
-                            End = new DateTime(2018, 4, 18, 11, 0, 0, 0, DateTimeKind.Local),
+                            End = new DateTime(2018, 4, 18, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             PatientId = "P3",
-                            Start = new DateTime(2018, 4, 18, 10, 0, 0, 0, DateTimeKind.Local),
+                            Start = new DateTime(2018, 4, 18, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 274, DateTimeKind.Local).AddTicks(30)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 743, DateTimeKind.Local).AddTicks(700)
                         });
                 });
 
@@ -180,16 +180,16 @@ namespace AppointmentManagement.Migrations
                         new
                         {
                             Id = "D1",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 276, DateTimeKind.Local).AddTicks(4360),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 744, DateTimeKind.Local).AddTicks(8340),
                             Name = "Dr Carrot",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 276, DateTimeKind.Local).AddTicks(4360)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 744, DateTimeKind.Local).AddTicks(8340)
                         },
                         new
                         {
                             Id = "D2",
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 276, DateTimeKind.Local).AddTicks(5030),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 744, DateTimeKind.Local).AddTicks(8930),
                             Name = "Dr Cucumber",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 276, DateTimeKind.Local).AddTicks(5030)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 744, DateTimeKind.Local).AddTicks(8930)
                         });
                 });
 
@@ -230,28 +230,28 @@ namespace AppointmentManagement.Migrations
                         {
                             Id = "P1",
                             Age = 12L,
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 277, DateTimeKind.Local).AddTicks(1650),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 745, DateTimeKind.Local).AddTicks(5660),
                             Gender = "M",
                             Name = "Pear",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 277, DateTimeKind.Local).AddTicks(1650)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 745, DateTimeKind.Local).AddTicks(5660)
                         },
                         new
                         {
                             Id = "P2",
                             Age = 22L,
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 277, DateTimeKind.Local).AddTicks(3150),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 745, DateTimeKind.Local).AddTicks(7100),
                             Gender = "F",
                             Name = "Apple",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 277, DateTimeKind.Local).AddTicks(3150)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 745, DateTimeKind.Local).AddTicks(7100)
                         },
                         new
                         {
                             Id = "P3",
                             Age = 32L,
-                            CreatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 277, DateTimeKind.Local).AddTicks(3200),
+                            CreatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 745, DateTimeKind.Local).AddTicks(7140),
                             Gender = "M",
                             Name = "Orange",
-                            UpdatedAt = new DateTime(2020, 8, 2, 2, 16, 27, 277, DateTimeKind.Local).AddTicks(3200)
+                            UpdatedAt = new DateTime(2020, 8, 2, 22, 51, 20, 745, DateTimeKind.Local).AddTicks(7140)
                         });
                 });
 #pragma warning restore 612, 618

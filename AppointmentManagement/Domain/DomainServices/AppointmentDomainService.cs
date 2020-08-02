@@ -61,7 +61,7 @@ namespace AppointmentManagement.Domain.DomainServices
 
 		private async Task IsValidPatient(string patientId)
 		{
-			if (await _patientRepo.FindById(patientId) != null)
+			if (await _patientRepo.FindById(patientId) == null)
 				throw new AppointmentDomainException(
 					"Patient id is not found in the database. Invalid request."
 				);

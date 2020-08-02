@@ -19,6 +19,9 @@
 
   <ItemGroup>
     <Folder Include="Domain\" />
+    <Folder Include="Fixture\" />
+    <Folder Include="Domain\AggregateModels\" />
+    <Folder Include="Domain\DomainServices\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppointmentManagement\AppointmentManagement.csproj" />
