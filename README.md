@@ -5,11 +5,12 @@
 
 ### How to run:
 1. Update Database.ConnectionString property in "./AppointmentManagement/appsettings.Development.json" to your PostgresSQL setup
-2. In your terminal, cd to "./AppointmentManagement" and run the below command. This will build the api and setup the database with seed data.
+2. In "./AppointmentManagement" and run the below command. This will build the api and setup the database with seed data.
     - dotnet restore
     - dotnet build
     - dotnet tool install --global dotnet-ef
     - dotnet ef database update
+    - dotnet run
 3. Launch the application at https://localhost:5001/swagger/index.html
 
 ### Built using:
@@ -18,3 +19,4 @@
 - Entity Framework Core 3.1.6
 - Fluent Validation 9.0.1
 - Swagger 5.5.1
+- Xunit 2.4.1
